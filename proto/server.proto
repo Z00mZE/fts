@@ -1,0 +1,25 @@
+syntax = "proto3";
+package fts;
+
+import "google/api/annotations.proto";
+
+option go_package = "github.com/Z00mze/fts/gen";
+
+message Request{
+  string query = 1;
+}
+message Response{
+  message Document{
+    string id = 1;
+    string description = 2;
+  }
+  repeated Document result = 1;
+}
+service Snowball {
+  rpc Search(Request) returns (Response){
+    option (google.api.http) = {
+      post: "/search"
+      body: "*"
+    };
+  };
+}
