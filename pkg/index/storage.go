@@ -85,17 +85,17 @@ func (i *Index) analyze(text string) []string {
 }
 
 func (i *Index) tokenize(text string) []string {
-	return strings.FieldsFunc(text, i.stringSpliter)
+	return strings.FieldsFunc(text, i.stringSplitter)
 }
 
-func (i *Index) stringSpliter(r rune) bool {
+func (i *Index) stringSplitter(r rune) bool {
 	return !unicode.IsLetter(r) && !unicode.IsNumber(r)
 }
 
 func (i *Index) lowercaseFilter(tokens []string) []string {
 	r := make([]string, len(tokens))
-	for i, token := range tokens {
-		r[i] = strings.ToLower(token)
+	for tid, token := range tokens {
+		r[tid] = strings.ToLower(token)
 	}
 	return r
 }
@@ -112,8 +112,8 @@ func (i *Index) stopWordFilter(tokens []string) []string {
 
 func (i *Index) stemmerFilter(tokens []string) []string {
 	r := make([]string, len(tokens))
-	for i, token := range tokens {
-		r[i] = snowballRussian.Stem(token, false)
+	for tid, token := range tokens {
+		r[tid] = snowballRussian.Stem(token, false)
 	}
 	return r
 }
