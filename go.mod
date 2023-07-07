@@ -11,7 +11,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	go.uber.org/zap v1.24.0
 	google.golang.org/genproto/googleapis/api v0.0.0-20230629202037-9506855d4529
-	google.golang.org/grpc v1.56.1
+	google.golang.org/grpc v1.56.2
 	google.golang.org/protobuf v1.31.0
 )
 
