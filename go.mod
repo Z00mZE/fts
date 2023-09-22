@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/google/uuid v1.3.1
 	github.com/grpc-ecosystem/go-grpc-middleware v1.4.0
-	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.0.0
+	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.0.1
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.16.1
 	github.com/kljensen/snowball v0.8.0
 	github.com/pkg/errors v0.9.1
